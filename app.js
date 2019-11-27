@@ -1,8 +1,7 @@
 const express = require('express');
 const app = express();
 const morgan = require('morgan');
-const productRoutes = require("./api/routes/product");
-const orderRoutes = require("./api/routes/orders");
+const authorRoutes = require("./api/routes/auteur");
 const bodyParser = require("body-parser");
 
 //morgan sert a avoir des logs dans le terminal
@@ -25,8 +24,7 @@ app.use( (req, res, next) => {
 });
 
 
-app.use('/products', productRoutes);
-app.use('/orders', orderRoutes);
+app.use('/author', authorRoutes);
 
 //Prendre en charge les erreurs de requetes
 app.use( (req,res,next) => {
